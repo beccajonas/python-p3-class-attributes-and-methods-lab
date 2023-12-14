@@ -37,7 +37,7 @@ class Song:
             cls.genres.append(genre)
             
         else:   
-            print('Artist already exists in list')
+            None
     
     @classmethod
     def artist_count(cls, artist):
@@ -52,7 +52,7 @@ class Song:
         if not artist in cls.artists:
             cls.artists.append(artist)
         else: 
-            print('Artist already exists in list')
+            None
 
     @classmethod
     def plot_genre_histogram(cls):
@@ -76,19 +76,21 @@ class Song:
         plt.title('Artist Count Histogram')
         plt.show()
 
-# Example usage:
-cruel_summer = Song('Pop', 'Pop Artist', 'Pop')
-pop_summer = Song('Pop', 'Pop Artist', 'Pop')
+pop_song = Song('Pop', 'Pop Artist', 'Pop')
+pop_song_2 = Song('Pop2', 'Pop Artist', 'Pop')
 rock_song = Song('Rock', 'Rock Artist', 'Rock')
 country_song = Song('Country', 'Country Artist', 'Country')
-# (Assuming you have created Song instances and populated the dictionaries)
-# song1 = Song("Song1", "Artist1", "Genre1")
-# song2 = Song("Song2", "Artist2", "Genre1")
-# ... (create more instances)
+country_song2 = Song('Country2', 'Country Artist', 'Country')
 
-# Plotting histograms
-print(Song.plot_genre_histogram())
-print(Song.plot_artist_histogram())
+print(Song.count)
+print(Song.artists)
+print(Song.genres)
+print(Song.genre_count_dict)
+print(Song.artist_count_dict)
+
+
+Song.plot_genre_histogram()
+Song.plot_artist_histogram()
     
 
 
